@@ -1,0 +1,23 @@
+.liked-section{
+  width: 100%;
+}
+  
+  .liked-section_your-itemsText {
+    font-weight: 700;
+    font-size: 20px;
+    color: #000;
+  }
+  
+   
+  .liked-section__items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .liked__button {
+    display: flex;
+    gap: 20px;
+  }
+  

@@ -1,0 +1,32 @@
+.modal__extra_text_wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .modal__button_login {
+    margin-top: 20px;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 1);
+    color: #fff;
+    height: 36px;
+    width: 124px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .modal__button_login:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+    transition: background-color 1s;
+  }
+  
+  .modal__or_signup {
+    margin-left: 10px;
+    color: #6c757d;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .modal__or_signup:hover {
+    text-decoration: underline;
+  }
