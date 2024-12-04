@@ -11,6 +11,7 @@ import { getPokemon } from  "../../utils/PokeAPI";
 import {
   addItems,
   getItems,
+  deleteItems,
   getUserInfo,
   likeCard,
   dislikeCard,
@@ -27,6 +28,7 @@ function App() {
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
   const [pokemonItems, setPokemonItems] = useState([]);
+  const [filteredPokemon, setFilteredPokemon] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
 
@@ -132,26 +134,53 @@ function App() {
     }
   };
 
-  const search = ((input) => {
-   getPokemon(input)
-   .then(({ name, id, sprites }) => {console.log(forms)});
-  });
-
   const catchEmAll = (start, end) => {
     for (let i = start; i <= end; i++){
-     const data = getPokemon(i.toString());
-     const name = data.name;
-     const link = data.sprites;
-     console.log(data);
-     console.log(name);
-     console.log(link);
-    //  addItems(name, link);
+     getPokemon(i.toString()).then((data) => {
+      console.log(i);
+      const name = data.name;
+      const link = data.sprites.front_default;
+      const number = i;
+      addItems(name, link, number);
+    });
     }
    }
 
+  const release = (start, end) => {
+    for (let i = start; i <= end; i++){
+      const id = i;
+      deleteItems(id);
+    };
+  }
+
+  const search = () => {
+    setFilteredPokemon(pokemonItems);
+    console.log(filteredPokemon);
+    document.getElementById("search-bar").addEventListener("keyup", function() {
+        let query = document.getElementById("search-bar").value.trim();
+      
+        if (query === "") {
+          setFilteredPokemon(pokemonItems);
+        } else {
+          
+          let filteredResults = pokemonItems.filter(item => item.name.toLowerCase().includes(query.toLowerCase()));
+
+          
+          setFilteredPokemon(filteredResults);
+        }
+      });    
+    }
+  // useEffect(() =>{
+  //   release(1, 6)
+  // }, []);
+
+  // useEffect(() => {
+  //   catchEmAll(1, 300);
+  // }, []);
+
   useEffect(() => {
-    catchEmAll(1, 248);
-  })
+    search();
+  }, []);
 
   useEffect(() => {
     if (!localStorage.getItem("jwt")) {
@@ -170,8 +199,8 @@ function App() {
   useEffect(() => {
     getItems()
       .then((data) => {
+        data.sort((a,b) => a.number - b.number);
         setPokemonItems(data);
-        console.log(data);
       })
       .catch(console.err);
   }, []);
@@ -220,7 +249,7 @@ function App() {
                 element={
                   <Main
                     handleCardClick={handleCardClick}
-                    pokemonItems={pokemonItems}
+                    pokemonItems={filteredPokemon}
                     handleCardLike={handleCardLike}
                   />
                 }

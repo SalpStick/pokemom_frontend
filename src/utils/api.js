@@ -23,7 +23,7 @@ const getUserInfo = (token) => {
   }).then(_checkResponse);
 };
 
-function addItems(name, link) {
+function addItems(name, link, number) {
   return fetch(`${baseUrl}/items`, {
     method: "POST",
     headers: {
@@ -32,16 +32,16 @@ function addItems(name, link) {
     body: JSON.stringify({
       name,
       imageUrl: link,
+      number
     }),
   }).then(_checkResponse);
 }
 
-function deleteItems(id, token) {
+function deleteItems(id) {
   return fetch(`${baseUrl}/items/${id}`, { 
     method: "DELETE", 
     headers: {
-    "Content-Type": "application/json",
-    Authorization: `Bearer ${token}`,
+    "Content-Type": "application/json"
   }, })
     .then(_checkResponse)
     .then(() => console.log("Card has been deleted"));

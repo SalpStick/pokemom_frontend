@@ -1,5 +1,5 @@
 import "./Main.css";
-import TitleCard from "../TitleCard/TitleCard.jsx";
+import { SearchBar } from "../SearchBar/Searchbar";
 import ItemCard from "../ItemCard/ItemCard";
 import React , { useContext } from 'react';
 
@@ -7,7 +7,7 @@ function Main({ handleCardClick, pokemonItems, handleCardLike }) {
 
   return (
     <main>
-      <TitleCard/>
+      <SearchBar/>
       <section className="cards">
         <p className="card__text">
           Gotta catch 'em all
