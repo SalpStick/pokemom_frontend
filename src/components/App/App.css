@@ -1,6 +1,6 @@
 .page {
     display: flex;
-    background-color: #f3f3f3;
+    background-color: white;
   }
   
   .page__content {
@@ -8,5 +8,8 @@
     margin: 0 auto;
     padding: 0 20px;
     font-family: "Cabinet Grotesk", Times, serif;
+    background-image: url(../../images/Pokedex.png);
+    background-size: 100%;
+    border-radius: 20px;
   }
   

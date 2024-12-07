@@ -2,6 +2,8 @@
     position: relative;
     display: flex;
     justify-content: center;
+    background-color: antiquewhite;
+    border-radius: 15px;
   }
   
   .card__image {
@@ -27,21 +29,21 @@
 
   .card__like-button {
     border: none;
-    background-image: url(../../images/LikeButton.svg);
+    background-image: url(../../images/PokeballInactive.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-color: transparent;
     cursor: pointer;
     padding: 0;
-    width: 18px;
-    height: 15px;
+    width: 25px;
+    height: 23px;
     color: rgba(0, 0, 0, 0.6);
     margin-left: 10px;
     margin-top: 5px;
   }
   
   .card__like-button_active {
-    background-image: url(../../images/LikeButtonActive.svg);
+    background-image: url(../../images/PokeballActive.png);
     color: #000;
   }
   

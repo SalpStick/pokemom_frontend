@@ -3,7 +3,7 @@ import LikedSection from "../LikedSection/LikedSection";
 import react from "react";
 import "./Profile.css";
 
-function Profile({ handleCardClick, pokeItems, handleAddClick, handleCardLike, handleLogout, handleEditProfile }) {
+function Profile({ handleCardClick, pokemonItems, handleAddClick, handleCardLike, handleLogout, handleEditProfile }) {
   return (
     <div className="profile__page">
       <SideBar 
@@ -13,7 +13,7 @@ function Profile({ handleCardClick, pokeItems, handleAddClick, handleCardLike, h
 
       <LikedSection
         handleCardClick={handleCardClick}
-        pokeItems = {pokeItems}
+        pokemonItems = {pokemonItems}
         handleAddClick={handleAddClick}
         handleCardlike={handleCardLike}
       />

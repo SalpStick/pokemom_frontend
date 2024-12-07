@@ -154,8 +154,13 @@ function App() {
   }
 
   const search = () => {
+    for (var i = 0; i < 1e7; i++) {
+      if (pokemonItems.length != 0){
+        break;
+      }
+    }
     setFilteredPokemon(pokemonItems);
-    console.log(filteredPokemon);
+
     document.getElementById("search-bar").addEventListener("keyup", function() {
         let query = document.getElementById("search-bar").value.trim();
       
@@ -179,10 +184,6 @@ function App() {
   // }, []);
 
   useEffect(() => {
-    search();
-  }, []);
-
-  useEffect(() => {
     if (!localStorage.getItem("jwt")) {
       return;
     }
@@ -204,6 +205,13 @@ function App() {
       })
       .catch(console.err);
   }, []);
+
+  useEffect(() => {
+    if(pokemonItems.length > 0){
+      search();
+    }
+  }, [pokemonItems]);
+
 
   // useEffect(() => {
   //   document.addEventListener("mousedown", handleOutsideClick);
@@ -232,8 +240,7 @@ function App() {
                     children={
                       <Profile
                         handleCardClick={handleCardClick}
-                        pokemonItems={pokemonItems}
-                        handleAddClick={handleAddClick}
+                        pokemonItems={filteredPokemon}
                         handleLogout={handleLogout}
                         handleEditProfile={handleEditClick}
                         handleProfileChange={handleEditProfileSubmit}

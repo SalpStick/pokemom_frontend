@@ -7,11 +7,11 @@ function Main({ handleCardClick, pokemonItems, handleCardLike }) {
 
   return (
     <main>
-      <SearchBar/>
       <section className="cards">
         <p className="card__text">
           Gotta catch 'em all
         </p>
+        <SearchBar/>
         <ul className="cards__list">
           {pokemonItems
             .filter((item) => {

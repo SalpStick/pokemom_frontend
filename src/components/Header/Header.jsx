@@ -1,5 +1,5 @@
 import "./Header.css";
-import logo from "../../images/Logo.png";
+import Pokemom from "../../images/Pokemom.png"
 import { Link } from "react-router-dom";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import { useContext } from "react";
@@ -11,7 +11,7 @@ function Header({ onLoginClick, onRegisterClick, isLoggedIn }) {
     <header>
       <nav className="header">
         <Link to="/">
-          <img className="header__logo" src={logo} alt="App Logo" />
+          <img className="header__logo" src={Pokemom} alt="App Logo" />
         </Link>
 
         <div className="header__user-container">
