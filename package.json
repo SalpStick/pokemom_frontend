@@ -3,18 +3,19 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://wtwr1.ignorelist.com",
+  "homepage": "https://pokemom.ignorelist.com",
   "scripts": {
     "dev": "vite --open",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "deploy": "npm run build && scp -r ./dist/* tylermaxharris@wtwr1.ignorelist.com:/home/tylermaxharris/frontend"
+    "deploy": "npm run build && scp -r ./dist/* tylermaxharris@pokemom.ignorelist.com:/home/tylermaxharris/frontend"
   },
   "dependencies": {
     "celebrate": "^15.0.3",
     "express": "^4.21.1",
     "express-winston": "^4.2.0",
+    "node.js": "^0.0.1-security",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.24.0",

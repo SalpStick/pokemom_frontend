@@ -202,6 +202,7 @@ function App() {
       .then((data) => {
         data.sort((a,b) => a.number - b.number);
         setPokemonItems(data);
+        console.log(data);
       })
       .catch(console.err);
   }, []);
