@@ -1,5 +1,5 @@
 const BASE_URL  = process.env.NODE_ENV === "production"
-? "https://api.wtwr1.ignorelist.com"
+? "https://api.pokemom.ignorelist.com"
 : "http://localhost:3001";
 import { _checkResponse } from "./api";
 
