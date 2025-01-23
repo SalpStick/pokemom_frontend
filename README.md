@@ -7,3 +7,7 @@ Search and capture pokemon. Then you can take a look at what a shiny would look 
 # using pokemom_backend
 
 pull request: git@github.com:SalpStick/pokemom_backend.git
+
+# live website
+
+pokemom.ignorelist.com

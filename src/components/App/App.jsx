@@ -176,7 +176,7 @@ function App() {
       });    
     }
   // useEffect(() =>{
-  //   release(1, 6)
+  //   release(1, 300)
   // }, []);
 
   // useEffect(() => {

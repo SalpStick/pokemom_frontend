@@ -10,7 +10,6 @@ function _checkResponse(res) {
 }
 
 function getItems() {
-  console.log(baseUrl);
   return fetch(`${baseUrl}/items`).then(_checkResponse);
 }
 
