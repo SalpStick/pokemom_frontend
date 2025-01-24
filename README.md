@@ -11,3 +11,5 @@ pull request: git@github.com:SalpStick/pokemom_backend.git
 # live website
 
 pokemom.ignorelist.com
+
+click on pokemon to turn then into shinys and put them into your storage with the pokeballs.
